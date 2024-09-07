@@ -1,0 +1,103 @@
+body {
+  min-height: 650px;
+}
+
+.container {
+  position: relative;
+}
+
+.box {
+  background-color: #94cef5;
+  border: 1px solid #4ea4e0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  min-height: 40px;
+  min-width: 40px;
+  position: relative;
+}
+
+.layout .box {
+  opacity: 0.8;
+}
+
+.template .box {
+  background-color: initial;
+  border: 1px solid gray;
+}
+
+.layout, .template {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.layout {
+  z-index: 1;
+}
+
+.template .box {
+  position: absolute;
+}
+
+.box:before {
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.template .box-1 {
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100px;
+}
+
+.template .box-2 {
+  top: 100px;
+  left: 0;
+  width: 100px;
+  height: 300px;
+}
+
+.template .box-3 {
+  top: 100px;
+  left: 100px;
+  width: 300px;
+  height: 300px;
+}
+
+.template .box-4 {
+  top: 400px;
+  left: 0;
+  width: 400px;
+  height: 100px;
+}
+
+.template .box-5 {
+  top: 0;
+  left: 400px;
+  width: 100px;
+  height: 167px;
+}
+
+.template .box-6 {
+  top: 166px;
+  left: 400px;
+  width: 100px;
+  height: 167px;
+}
+
+.template .box-7 {
+  top: 333px;
+  left: 400px;
+  width: 100px;
+  height: 167px;
+}
