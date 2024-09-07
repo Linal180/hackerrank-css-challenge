@@ -1,3 +1,4 @@
+/* Reset default padding and margins */
 * {
   margin: 0;
   padding: 0;
@@ -8,49 +9,58 @@ body {
   display: flex;
   flex-direction: row;
   height: 100vh;
+  width: 100vw;
 }
 
+/* Left container takes 4/5 of the parent's width */
 .left-container {
   display: flex;
   flex-direction: column;
-  flex: 4;
+  flex-basis: 80%;
   height: 100%;
 }
 
+/* Right container takes 1/5 of the parent's width */
 .right-container {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex-basis: 20%;
   height: 100%;
 }
 
+/* Header and footer take 1/5 of the parent's height */
 .header,
 .footer {
-  flex: 1;
+  flex-basis: 20%;
   background-color: #f1f1f1;
   text-align: center;
   padding: 10px;
 }
 
+/* The content area (inside left-container) takes the rest of the space */
 .content {
   display: flex;
-  flex: 3;
+  flex-basis: 60%;
+  height: 100%;
 }
 
+/* Sidebar takes 1/4 of the parent's width */
 .sidebar {
-  flex: 1;
+  flex-basis: 25%;
   background-color: #ccc;
   padding: 10px;
 }
 
+/* Article takes 3/4 of the parent's width */
 .article {
-  flex: 3;
+  flex-basis: 75%;
   background-color: #eaeaea;
   padding: 10px;
 }
 
+/* Each aside block takes an equal share of the right-container */
 .aside {
-  flex: 1;
+  flex-basis: 33.33%;
   background-color: #ddd;
   margin: 5px;
   padding: 10px;
