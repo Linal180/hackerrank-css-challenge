@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-body {
+/* The root layout should use flexbox */
+.layout {
   display: flex;
   flex-direction: row;
   height: 100vh;
@@ -13,7 +14,7 @@ body {
 }
 
 /* Left container takes 4/5 of the parent's width */
-.left-container {
+.left {
   display: flex;
   flex-direction: column;
   flex-basis: 80%;
@@ -21,7 +22,7 @@ body {
 }
 
 /* Right container takes 1/5 of the parent's width */
-.right-container {
+.right {
   display: flex;
   flex-direction: column;
   flex-basis: 20%;
@@ -59,10 +60,41 @@ body {
 }
 
 /* Each aside block takes an equal share of the right-container */
-.aside {
+.aside-1,
+.aside-2,
+.aside-3 {
   flex-basis: 33.33%;
   background-color: #ddd;
   margin: 5px;
   padding: 10px;
   text-align: center;
+}
+
+/* Position the data-title elements for comparison with template */
+[data-title="header"] {
+  grid-area: header;
+}
+
+[data-title="sidebar"] {
+  grid-area: sidebar;
+}
+
+[data-title="article"] {
+  grid-area: article;
+}
+
+[data-title="footer"] {
+  grid-area: footer;
+}
+
+[data-title="aside-1"] {
+  grid-area: aside-1;
+}
+
+[data-title="aside-2"] {
+  grid-area: aside-2;
+}
+
+[data-title="aside-3"] {
+  grid-area: aside-3;
 }
