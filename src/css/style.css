@@ -5,35 +5,28 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
+/* The root layout should use flexbox */
+.layout {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.container {
-  display: flex;
-  width: 80%;
-  height: 80%;
-}
-
-/* Left container for header, sidebar, article, and footer */
+/* The layout has two parts: left (main content) and right (asides) */
 .left {
   display: flex;
   flex-direction: column;
   flex: 4;
 }
 
-/* Right container for aside blocks */
 .right {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* Header and footer occupy fixed height */
-.header, 
+/* Header and footer have fixed heights */
+.header,
 .footer {
   height: 15%;
   background-color: #f1f1f1;
@@ -68,8 +61,8 @@ body {
 }
 
 /* Asides take equal height within the right container */
-.aside-1, 
-.aside-2, 
+.aside-1,
+.aside-2,
 .aside-3 {
   flex: 1;
   background-color: #ddd;
@@ -77,4 +70,15 @@ body {
   align-items: center;
   justify-content: center;
   margin: 5px 0;
+}
+
+/* Adding the positioning and sizing requirement */
+[data-title="header"],
+[data-title="sidebar"],
+[data-title="article"],
+[data-title="footer"],
+[data-title="aside-1"],
+[data-title="aside-2"],
+[data-title="aside-3"] {
+  position: relative;
 }
