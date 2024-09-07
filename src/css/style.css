@@ -7,102 +7,74 @@
 
 body {
   height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* The root layout should use flexbox */
-.layout {
+.container {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
-/* Left container takes 4/5 of the parent's width */
+/* Left container for header, sidebar, article, and footer */
 .left {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 100%;
+  flex: 4;
 }
 
-/* Right container takes 1/5 of the parent's width */
+/* Right container for aside blocks */
 .right {
   display: flex;
   flex-direction: column;
-  width: 20%;
-  height: 100%;
+  flex: 1;
 }
 
-/* Header and footer take 1/5 of the parent's height */
-.header,
+/* Header and footer occupy fixed height */
+.header, 
 .footer {
-  height: 20%;
+  height: 15%;
   background-color: #f1f1f1;
-  text-align: center;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* The content area (inside left-container) takes 3/5 of the height */
+/* Content area (between header and footer) is a flex container */
 .content {
   display: flex;
-  height: 60%;
+  flex: 1;
   background-color: #fff;
 }
 
-/* Sidebar takes 1/4 of the width in the content */
+/* Sidebar takes up 1/4 of the content area */
 .sidebar {
-  width: 25%;
+  flex: 1;
   background-color: #ccc;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Article takes 3/4 of the width in the content */
+/* Article takes up 3/4 of the content area */
 .article {
-  width: 75%;
+  flex: 3;
   background-color: #eaeaea;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Each aside block takes equal space in the right-container */
-.aside-1,
-.aside-2,
+/* Asides take equal height within the right container */
+.aside-1, 
+.aside-2, 
 .aside-3 {
   flex: 1;
   background-color: #ddd;
-  margin: 5px;
-  padding: 10px;
-  text-align: center;
-}
-
-/* Position the data-title elements for test alignment */
-[data-title="header"] {
-  grid-area: header;
-}
-
-[data-title="sidebar"] {
-  grid-area: sidebar;
-}
-
-[data-title="article"] {
-  grid-area: article;
-}
-
-[data-title="footer"] {
-  grid-area: footer;
-}
-
-[data-title="aside-1"] {
-  grid-area: aside-1;
-}
-
-[data-title="aside-2"] {
-  grid-area: aside-2;
-}
-
-[data-title="aside-3"] {
-  grid-area: aside-3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
 }
