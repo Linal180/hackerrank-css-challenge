@@ -5,19 +5,27 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* The root layout should use flexbox */
 .layout {
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
 }
 
 /* Left container takes 4/5 of the parent's width */
 .left {
   display: flex;
   flex-direction: column;
-  flex-basis: 80%;
+  width: 80%;
   height: 100%;
 }
 
@@ -25,52 +33,52 @@
 .right {
   display: flex;
   flex-direction: column;
-  flex-basis: 20%;
+  width: 20%;
   height: 100%;
 }
 
 /* Header and footer take 1/5 of the parent's height */
 .header,
 .footer {
-  flex-basis: 20%;
+  height: 20%;
   background-color: #f1f1f1;
   text-align: center;
   padding: 10px;
 }
 
-/* The content area (inside left-container) takes the rest of the space */
+/* The content area (inside left-container) takes 3/5 of the height */
 .content {
   display: flex;
-  flex-basis: 60%;
-  height: 100%;
+  height: 60%;
+  background-color: #fff;
 }
 
-/* Sidebar takes 1/4 of the parent's width */
+/* Sidebar takes 1/4 of the width in the content */
 .sidebar {
-  flex-basis: 25%;
+  width: 25%;
   background-color: #ccc;
   padding: 10px;
 }
 
-/* Article takes 3/4 of the parent's width */
+/* Article takes 3/4 of the width in the content */
 .article {
-  flex-basis: 75%;
+  width: 75%;
   background-color: #eaeaea;
   padding: 10px;
 }
 
-/* Each aside block takes an equal share of the right-container */
+/* Each aside block takes equal space in the right-container */
 .aside-1,
 .aside-2,
 .aside-3 {
-  flex-basis: 33.33%;
+  flex: 1;
   background-color: #ddd;
   margin: 5px;
   padding: 10px;
   text-align: center;
 }
 
-/* Position the data-title elements for comparison with template */
+/* Position the data-title elements for test alignment */
 [data-title="header"] {
   grid-area: header;
 }
