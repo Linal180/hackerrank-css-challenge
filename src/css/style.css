@@ -12,6 +12,12 @@
   height: 100%;
 }
 
+.content {
+  display: flex;
+  flex: 1;
+  background-color: #fff;
+}
+
 /* The layout has two parts: left (main content) and right (asides) */
 .left {
   display: flex;
