@@ -25,30 +25,35 @@
   flex: 1;
 }
 
-/* Header and footer have fixed heights */
-.header,
-.footer {
-  height: 15%;
-  background-color: #f1f1f1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Styling for the boxes inside the layout */
+.box {
+  background-color: #94cef5;
+  border: 1px solid #4ea4e0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  min-height: 40px;
+  min-width: 40px;
+  position: relative;
 }
 
-/* Content area (between header and footer) is a flex container */
-.content {
-  display: flex;
-  flex: 1;
-  background-color: #fff;
+/* Layout opacity */
+.layout .box {
+  opacity: 0.8;
 }
 
-/* Sidebar takes up 1/4 of the content area */
-.sidebar {
-  flex: 1;
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Template style (gray background) */
+.template .box {
+  background-color: initial;
+  border: 1px solid gray;
+}
+
+/* Common layout and template dimensions */
+.layout, .template {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Style for the content inside the box (using data-title) */
