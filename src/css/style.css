@@ -5,55 +5,65 @@
   box-sizing: border-box;
 }
 
-/* The root layout should use flexbox */
+/* Full viewport height and width */
+html, body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Root layout should take up full width and height */
 .layout {
   display: flex;
   width: 100%;
   height: 100%;
 }
 
-/* The layout has two parts: left (main content) and right (asides) */
+/* Left container takes 4/5 of the parent's width */
 .left {
   display: flex;
   flex-direction: column;
-  flex: 4;
+  width: 80%; /* 4/5 of the width */
+  height: 100%;
 }
 
+/* Right container takes 1/5 of the parent's width */
 .right {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  width: 20%; /* 1/5 of the width */
+  height: 100%;
+  justify-content: space-between;
 }
 
-/* Header and footer have fixed heights */
-.header,
-.footer {
-  height: 15%;
+/* Header and footer each take 1/5 of the parent's height */
+.header, .footer {
+  height: 20%; /* 1/5 of the height */
   background-color: #f1f1f1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Content area (between header and footer) is a flex container */
+/* Content area takes the remaining 3/5 height between header and footer */
 .content {
   display: flex;
-  flex: 1;
-  background-color: #fff;
+  height: 60%; /* Remaining height */
 }
 
-/* Sidebar takes up 1/4 of the content area */
+/* Sidebar takes 1/4 of the parent's width */
 .sidebar {
-  flex: 1;
+  width: 25%; /* 1/4 of the content width */
   background-color: #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Article takes up 3/4 of the content area */
+/* Article takes 3/4 of the parent's width */
 .article {
-  flex: 3;
+  width: 75%; /* 3/4 of the content width */
   background-color: #eaeaea;
   display: flex;
   align-items: center;
@@ -61,10 +71,8 @@
 }
 
 /* Asides take equal height within the right container */
-.aside-1,
-.aside-2,
-.aside-3 {
-  flex: 1;
+.aside-1, .aside-2, .aside-3 {
+  height: calc(33.33% - 10px); /* Each takes 1/3 of the right container's height */
   background-color: #ddd;
   display: flex;
   align-items: center;
@@ -72,7 +80,7 @@
   margin: 5px 0;
 }
 
-/* Adding the positioning and sizing requirement */
+/* Adding relative positioning for layout testing */
 [data-title="header"],
 [data-title="sidebar"],
 [data-title="article"],
